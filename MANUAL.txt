@@ -1,0 +1,24 @@
+1. You need to install R program on your computer.
+2. You need to install SAMtools on your computer.
+3. Download cabana.R, and set permissions to make it executable.
+	Chmod +x cabana.R
+4. The target bed file should have the following structure and define the exon region. The gene name should be in the fourth column.
+
+17	15134221	15134408	PMP22
+17	15138551	15138612	PMP22
+17	15142775	15142939	PMP22
+17	15162398	15162521	PMP22
+17	15163954	15164055	PMP22
+17	15168662	15168685	PMP22
+X	31139937	31140058	DMD
+X	31144746	31144801	DMD
+X	31152206	31152322	DMD
+X	31164395	31164542	DMD
+X	31165379	31165646	DMD
+X	31187547	31187729	DMD
+....
+5. Execute. Enter bed file information in --bed, bam file of the sample you want to analyze CNVs in --case, and bam files of controls in --control. Control bam files should be entered with comma (,) between them.
+
+<CABANA installation directory>/cabana.R --bed=<target>.bed --case=<sample>.bam --control=<control1>.bam,<control2>.bam,<control3>.bam
+
+6. After a while, the depth file for the sample and controls as well as the CABANA results for each gene in PDF format, will be generated. The running time is determined by the size of the target region and the bam file.
